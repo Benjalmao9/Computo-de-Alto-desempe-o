@@ -1,10 +1,9 @@
 # =============================================================================
 # analisis_transacciones.py
 # Análisis de transacciones financieras simuladas desde un archivo Excel.
-# Restricciones: solo openpyxl, csv, unicodedata, datetime, text2num.
+# Restricciones: solo openpyxl, unicodedata, datetime, text2num.
 # =============================================================================
 
-import csv
 import sys
 import unicodedata
 from datetime import datetime, timedelta
@@ -237,9 +236,8 @@ def limpiar_pagos(registro):
     tipo = registro.get("tipo_pago", "")
 
     # meses_sin_intereses = 0 es válido si es compra de contado
-    if tipo != "contado" and (msi is None or msi == 0):
-        if tipo == "msi":
-            return registro, "meses_sin_intereses inválido para compra MSI"
+    if tipo == "msi" and (msi is None or msi == 0):
+        return registro, "meses_sin_intereses inválido para compra MSI"
 
     # numero_pago_actual no puede superar total_pagos
     if npa is not None and tp_t is not None:
@@ -253,7 +251,7 @@ def limpiar_pagos(registro):
 
 # ---- Orquestador de limpieza ------------------------------------------------
 
-def limpiar_registro(registro, numero_linea):
+def limpiar_registro(registro):
     """
     Aplica todas las funciones de limpieza a un registro.
     Retorna (registro_limpio, error) donde error es None si el registro es válido.
@@ -261,25 +259,25 @@ def limpiar_registro(registro, numero_linea):
     # 1. Texto
     registro, error_texto = limpiar_texto(registro)
     if error_texto:
-        return registro, f"Línea {numero_linea}: {error_texto}"
+        return registro, error_texto
 
     # 2. Monto
     monto = limpiar_monto(registro.get("monto_compra"))
     if monto is None:
-        return registro, f"Línea {numero_linea}: monto_compra inválido ({registro.get('monto_compra')!r})"
+        return registro, f"monto_compra inválido ({registro.get('monto_compra')!r})"
     registro["monto_compra"] = monto
 
     # 3. Fecha
     fecha_str, mes = limpiar_fecha(registro.get("fecha_compra"))
     if fecha_str is None:
-        return registro, f"Línea {numero_linea}: fecha_compra inválida ({registro.get('fecha_compra')!r})"
+        return registro, f"fecha_compra inválida ({registro.get('fecha_compra')!r})"
     registro["fecha_compra"] = fecha_str
     registro["mes_compra"]   = mes
 
     # 4. Pagos
     registro, error_pagos = limpiar_pagos(registro)
     if error_pagos:
-        return registro, f"Línea {numero_linea}: {error_pagos}"
+        return registro, error_pagos
 
     return registro, None
 
@@ -296,7 +294,7 @@ def procesar_registros(registros_raw):
     for i, reg in enumerate(registros_raw, start=2):  # start=2 porque fila 1 son headers
         # Trabajamos sobre una copia para no mutar el original
         reg_copia = dict(reg)
-        reg_limpio, error = limpiar_registro(reg_copia, i)
+        reg_limpio, error = limpiar_registro(reg_copia)
         if error:
             invalidos.append({"linea": i, "motivo": error, "datos": reg})
         else:
@@ -567,7 +565,10 @@ def conclusion(res_actividad, res_categorias, recomendaciones, invalidos, total_
     """Genera un bloque interpretando los resultados del análisis."""
     pct_invalidos = len(invalidos) / total_raw * 100 if total_raw else 0
     n_rec_msi     = sum(1 for r in recomendaciones if "MSI" in r["tipo"])
-    n_rec_credito = sum(1 for r in recomendaciones if "credito" in r["tipo"].lower())
+    n_rec_credito = sum(
+        1 for r in recomendaciones
+        if "credito" in normalizar_unicode(r["tipo"].lower())
+    )
 
     cat_top, _ = res_categorias["categoria_mas_transacciones"]
     mes_top, _ = res_actividad["mes_mayor_actividad"]
