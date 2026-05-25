@@ -1,0 +1,622 @@
+\documentclass[12pt,oneside]{article}
+
+% ---------------------------
+% PAQUETES
+% ---------------------------
+\usepackage{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-nodecimaldot,es-tabla]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage[svgnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{mathptmx}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{colortbl}
+\usepackage{pifont}
+
+% ---------------------------
+% MÁRGENES
+% ---------------------------
+\geometry{
+  letterpaper,
+  left=20mm,
+  right=20mm,
+  tmargin=30mm,
+  bmargin=30mm
+}
+
+% ---------------------------
+% COLORES
+% ---------------------------
+\definecolor{Custom_color_2}{rgb}{0.2,0.2,0.8}
+\definecolor{RowLight}{RGB}{245,245,245}
+\definecolor{CalifColor}{RGB}{122,74,46}
+\definecolor{AsistColor}{RGB}{46,107,122}
+\definecolor{AguaColor}{RGB}{30,100,180}
+\definecolor{FisicaColor}{RGB}{59,130,80}
+\definecolor{FuncColor}{RGB}{100,40,120}
+\definecolor{CodeBg}{RGB}{245,245,245}
+\definecolor{CodeFrame}{RGB}{180,180,180}
+
+\captionsetup{justification=raggedright,labelfont={color=Custom_color_2,bf}}
+\setlength{\headheight}{18pt}
+\setlength{\parskip}{4mm}
+\setlength{\parindent}{0mm}
+
+% ---------------------------
+% ENCABEZADO
+% ---------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\rfoot{\thepage}
+
+% ---------------------------
+% ESTILO DE CÓDIGO
+% ---------------------------
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{CodeBg},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  keywordstyle=\color{blue}\bfseries,
+  stringstyle=\color{orange!80!black},
+  commentstyle=\color{gray}\itshape,
+  showstringspaces=false,
+  breaklines=true,
+  inputencoding=utf8,
+  extendedchars=true,
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+           {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+           {ñ}{{\~n}}1 {Ñ}{{\~N}}1,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  numbersep=6pt,
+  captionpos=b
+}
+
+% ---------------------------
+% COMANDOS AUXILIARES
+% ---------------------------
+\newcommand{\appheader}[2]{%
+  {\large\textbf{\textcolor{#1}{#2}}}%
+  \vspace{1mm}\hrule height 1.2pt \vspace{3mm}%
+}
+
+\newcommand{\seccion}[1]{%
+  \vspace{2mm}%
+  \noindent\textbf{#1}%
+  \vspace{1mm}%
+}
+
+\newcommand{\imagenresultado}[1]{%
+  \begin{figure}[H]
+    \centering
+    \fbox{\begin{minipage}{0.92\textwidth}
+      \vspace{4cm}
+      \centering
+      \textcolor{gray}{\textit{[Captura de pantalla -- #1]}}
+      \vspace{4cm}
+    \end{minipage}}
+    \caption{Salida del programa -- #1}
+  \end{figure}
+}
+
+% =========================================================
+\begin{document}
+
+% =========================================================
+% PORTADA
+% =========================================================
+\Huge
+\begin{center}
+\begin{tabular}{ll}
+\raisebox{-.4\height}{\includegraphics[scale=0.13]{Figures/Logo_ipn.png}} &
+\textbf{ Instituto Politécnico Nacional}\\
+\end{tabular}
+
+\huge
+\textbf{Unidad Profesional Interdisciplinaria de \\ Ingeniería Alejo Peralta}
+
+\vspace{0.3cm}
+\textbf{Licenciatura en Ciencia De Datos}
+
+\textbf{Cómputo de Alto Desempeño}
+
+\rule{\textwidth}{0.1pt}
+
+\textbf{Actividad: Extracción, transformación y limpieza de datos}
+
+\rule{\textwidth}{0.1pt}
+
+\vspace{0.1cm}
+\Large
+\textbf{Dra. Leticia Oyuki Rojas Pérez} \\
+\vspace{0.2cm}
+
+\begin{center}
+\begin{tabular}{l r}
+\textbf{Integrante} & \textbf{Matrícula} \\[0.3cm]
+Benjamín Gutiérrez Rivera & 2025720091 \\
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm}
+\textbf{\today}
+\end{center}
+
+\newpage
+\normalsize
+
+% =========================================================
+\tableofcontents
+\newpage
+
+% =========================================================
+%  SECCIÓN: FUNCIONES DE CONVERSIÓN Y LIMPIEZA
+% =========================================================
+\section{Funciones de conversión y limpieza}
+
+\appheader{FuncColor}{Descripción general}
+
+Los cuatro programas usan funciones para convertir los datos del archivo a números.
+Cada dato pasa por varios intentos hasta obtener un valor válido o descartarse.
+
+\seccion{1.1 Función base \texttt{convertir} (todas las prácticas)}
+
+Primero intenta convertir el texto a número con \texttt{float()}. Si no funciona
+usa \texttt{text2num} para leer números escritos en español como \texttt{"ocho punto cinco"}.
+Si ninguno de los dos funciona el dato se descarta.
+
+\begin{lstlisting}[caption={Función base convertir}]
+from text_to_num import text2num
+
+def convertir(texto):
+    try:
+        return float(texto)           # intento 1: numero directo
+    except ValueError:
+        pass
+    try:
+        partes = texto.split(" punto ")
+        numeros = [str(text2num(p.strip(), "es")) for p in partes]
+        return float(".".join(numeros))   # intento 2: texto en espanol
+    except (ValueError, KeyError):
+        return None                   # dato invalido
+\end{lstlisting}
+
+\seccion{1.2 Diccionario y normalización de texto (Práctica 2)}
+
+En la práctica 2 los datos pueden venir como palabras del tipo \texttt{Asistió} o \texttt{faltó}.
+Se usa un diccionario para convertir esas palabras a \texttt{1.0} o \texttt{0.0}.
+La función \texttt{normalizar} quita tildes y pone el texto en minúsculas antes de buscar
+en el diccionario para que variantes como \texttt{ASISTIO} o \texttt{asistió} sean reconocidas.
+
+\begin{lstlisting}[caption={Diccionario y normalización -- Práctica 2}]
+import unicodedata
+
+estado_asistencia = {
+    "asistio":    1.0,
+    "falto":      0.0,
+    "no asistio": 0.0,
+}
+
+def normalizar(texto):
+    texto = unicodedata.normalize("NFKD", texto.lower().strip())
+    return "".join(c for c in texto if unicodedata.category(c) != "Mn")
+
+def convertir(texto):
+    clave = normalizar(texto)
+    if clave in estado_asistencia:      # paso 0: buscar en diccionario
+        return estado_asistencia[clave]
+    try:
+        return float(texto)
+    except ValueError:
+        pass
+    try:
+        partes = texto.split(" punto ")
+        numeros = [str(text2num(p.strip(), "es")) for p in partes]
+        return float(".".join(numeros))
+    except (ValueError, KeyError):
+        return None
+\end{lstlisting}
+
+\seccion{1.3 Limpieza de unidades -- litros (Práctica 3)}
+
+Algunos datos vienen con la unidad escrita como \texttt{"1 litro"} o \texttt{"2 litros"}.
+La función \texttt{limpiar} recorre una lista de unidades y las elimina del texto
+antes de intentar la conversión.
+
+\begin{lstlisting}[caption={Limpieza de unidades -- Práctica 3}]
+unidades = ["litros", "litro"]
+
+def limpiar(texto):
+    for unidad in unidades:
+        texto = texto.replace(unidad, "").strip()
+    return texto
+
+def convertir(texto):
+    texto = limpiar(texto)
+    try:
+        return float(texto)
+    except ValueError:
+        pass
+    try:
+        partes = texto.split(" punto ")
+        numeros = [str(text2num(p.strip(), "es")) for p in partes]
+        return float(".".join(numeros))
+    except (ValueError, KeyError):
+        return None
+\end{lstlisting}
+
+\seccion{1.4 Limpieza de unidades -- minutos (Práctica 4)}
+
+Igual que la práctica 3 pero con variantes de la unidad de tiempo como
+\texttt{"min"}, \texttt{"mins"} y \texttt{"minutos"}.
+
+\begin{lstlisting}[caption={Limpieza de unidades -- Práctica 4}]
+unidades = ["minutos", "minuto", "mins", "min"]
+
+def limpiar(texto):
+    for unidad in unidades:
+        texto = texto.replace(unidad, "").strip()
+    return texto
+
+def convertir(texto):
+    texto = limpiar(texto)
+    try:
+        return float(texto)
+    except ValueError:
+        pass
+    try:
+        partes = texto.split(" punto ")
+        numeros = [str(text2num(p.strip(), "es")) for p in partes]
+        return float(".".join(numeros))
+    except (ValueError, KeyError):
+        return None
+\end{lstlisting}
+
+\seccion{1.5 Resumen del pipeline de conversión}
+
+\begin{table}[H]
+\centering
+\caption{Pasos de conversión aplicados en cada práctica}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+  >{\columncolor{FuncColor!10}}p{1.2cm}
+  p{2.8cm}
+  >{\columncolor{RowLight}}p{2.2cm}
+  p{2.2cm}
+  >{\columncolor{RowLight}}p{4.8cm}
+}
+\toprule
+\rowcolor{FuncColor}
+\textcolor{white}{\textbf{Paso}} &
+\textcolor{white}{\textbf{Operación}} &
+\textcolor{white}{\textbf{Práctica 1}} &
+\textcolor{white}{\textbf{Práctica 2}} &
+\textcolor{white}{\textbf{Prácticas 3 y 4}} \\
+\midrule
+0 & Diccionario       & ---           & \texttt{normalizar} + dict & --- \\
+1 & Limpiar unidades  & ---           & ---        & \texttt{limpiar(texto)} \\
+2 & \texttt{float()}  & \checkmark    & \checkmark & \checkmark \\
+3 & \texttt{text2num} & \checkmark    & \checkmark & \checkmark \\
+4 & Descartar         & \texttt{None} & \texttt{None} & \texttt{None} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\seccion{1.6 Bibliotecas utilizadas}
+
+\begin{table}[H]
+\centering
+\caption{Bibliotecas del proyecto}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+  >{\columncolor{FuncColor!10}}p{3.5cm}
+  p{4cm}
+  >{\columncolor{RowLight}}p{5.8cm}
+}
+\toprule
+\rowcolor{FuncColor}
+\textcolor{white}{\textbf{Biblioteca}} &
+\textcolor{white}{\textbf{Instalación}} &
+\textcolor{white}{\textbf{Uso}} \\
+\midrule
+\texttt{pandas}        & \texttt{pip install pandas}   & Leer archivos y manejar los datos \\
+\texttt{text\_to\_num} & \texttt{pip install text2num} & Convertir texto en español a número \\
+\texttt{unicodedata}   & Estándar de Python            & Quitar tildes y normalizar texto \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\newpage
+
+% =========================================================
+%  PRÁCTICA 1: CALIFICACIONES
+% =========================================================
+\section{Práctica 1: Control de calificaciones}
+
+\appheader{CalifColor}{Descripción general}
+
+El programa lee el archivo \texttt{calificaciones.txt} donde cada línea tiene una calificación.
+Los datos pueden ser números o palabras en español. Se usa la función \texttt{convertir}
+de la sección~1.1 para procesarlos y luego se calculan estadísticas del grupo.
+
+\seccion{2.1 Datos de entrada}
+
+\begin{itemize}
+  \item Archivo: \texttt{calificaciones.txt}
+  \item Formato: un valor por línea como \texttt{8.5} u \texttt{ocho punto cinco}
+  \item Columna generada: \texttt{calificacion} (número decimal)
+\end{itemize}
+
+\seccion{2.2 Cálculos realizados}
+
+\begin{itemize}
+  \item Total de registros válidos, promedio, máximo y mínimo
+  \item Conteo de aprobados ($\geq 6.0$) y reprobados
+  \item Nivel de desempeño del grupo con \texttt{if/elif/else}:
+        Excelente ($\geq 9$), Bueno ($\geq 7$), Regular ($\geq 6$) o Requiere atención
+\end{itemize}
+
+\seccion{2.3 Tabla de métricas}
+
+\begin{table}[H]
+\centering
+\caption{Métricas calculadas -- Práctica 1}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+  >{\columncolor{CalifColor!15}}p{4.5cm}
+  >{\columncolor{RowLight}}p{9cm}
+}
+\toprule
+\rowcolor{CalifColor}
+\textcolor{white}{\textbf{Métrica}} &
+\textcolor{white}{\textbf{Descripción}} \\
+\midrule
+Total         & Calificaciones válidas leídas del archivo \\
+Promedio      & Media de todas las calificaciones \\
+Mayor / Menor & Calificación más alta y más baja \\
+Aprobados     & Alumnos con calificación $\geq 6.0$ \\
+Reprobados    & Alumnos con calificación $< 6.0$ \\
+Desempeño     & Categoría del grupo según el promedio \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\seccion{2.4 Resultados obtenidos}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figures/resultado_p1.png}
+  \caption{Salida del programa -- Práctica 1: Control de calificaciones}
+\end{figure}
+
+\seccion{2.5 Conclusión}
+
+El programa permite ver de forma rápida cómo está el grupo en general.
+Con el promedio se puede saber si los alumnos están aprobando o no y qué tan lejos están
+los mejores resultados de los más bajos. Esto ayuda a identificar si hay alumnos que
+necesitan más apoyo.
+
+\newpage
+
+% =========================================================
+%  PRÁCTICA 2: ASISTENCIAS
+% =========================================================
+\section{Práctica 2: Control de asistencia}
+
+\appheader{AsistColor}{Descripción general}
+
+El programa lee \texttt{asistencias.txt} donde cada línea indica si el alumno fue a clase o no.
+Los valores pueden ser números como \texttt{1} o \texttt{0} o palabras como \texttt{Asistió}
+y \texttt{faltó}. Se usa el diccionario de la sección~1.2 para manejar los casos de texto.
+
+\seccion{3.1 Datos de entrada}
+
+\begin{itemize}
+  \item Archivo: \texttt{asistencias.txt}
+  \item Formato: \texttt{1}/\texttt{0} o \texttt{Asistió}/\texttt{faltó}
+  \item Columna generada: \texttt{asistencia} donde \texttt{1.0} es asistió y \texttt{0.0} no asistió
+\end{itemize}
+
+\seccion{3.2 Cálculos realizados}
+
+\begin{itemize}
+  \item Total de clases registradas
+  \item Número de asistencias y faltas con \texttt{value\_counts()}
+  \item Porcentaje de asistencia: $(asistencias / total) \times 100$
+  \item Si el porcentaje es $\geq 80\%$ el alumno tiene derecho a evaluación
+\end{itemize}
+
+\seccion{3.3 Tabla de métricas}
+
+\begin{table}[H]
+\centering
+\caption{Métricas calculadas -- Práctica 2}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+  >{\columncolor{AsistColor!15}}p{4.5cm}
+  >{\columncolor{RowLight}}p{9cm}
+}
+\toprule
+\rowcolor{AsistColor}
+\textcolor{white}{\textbf{Métrica}} &
+\textcolor{white}{\textbf{Descripción}} \\
+\midrule
+Total de clases & Registros válidos leídos del archivo \\
+Asistencias     & Días con valor \texttt{1.0} \\
+Faltas          & Días con valor \texttt{0.0} \\
+Porcentaje      & $(asistencias / total) \times 100$ \\
+Estado          & Tiene o no derecho a evaluación \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\seccion{3.4 Resultados obtenidos}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figures/resultado_p2.png}
+  \caption{Salida del programa -- Práctica 2: Control de asistencia}
+\end{figure}
+
+\seccion{3.5 Conclusión}
+
+Con este programa se puede saber si un alumno cumple el mínimo de asistencia para
+presentar evaluación. Un porcentaje bajo puede significar que el alumno no ha
+tenido suficiente contacto con el tema para ser evaluado de manera justa.
+
+\newpage
+
+% =========================================================
+%  PRÁCTICA 3: CONSUMO DE AGUA
+% =========================================================
+\section{Práctica 3: Análisis de consumo de agua}
+
+\appheader{AguaColor}{Descripción general}
+
+El programa lee \texttt{consumo\_agua.txt} con el registro diario de litros de agua tomados.
+Algunos datos incluyen la palabra \texttt{litro} o \texttt{litros} junto al número
+por lo que se usa la función \texttt{limpiar} de la sección~1.3 para quitarla antes de convertir.
+
+\seccion{4.1 Datos de entrada}
+
+\begin{itemize}
+  \item Archivo: \texttt{consumo\_agua.txt}
+  \item Formato: \texttt{1.5}, \texttt{1 litro} o \texttt{dos punto cinco}
+  \item Columna generada: \texttt{litros} (número decimal)
+\end{itemize}
+
+\seccion{4.2 Cálculos realizados}
+
+\begin{itemize}
+  \item Total de registros, suma total, promedio, máximo y mínimo
+  \item Días en que se tomaron $\geq 2.0$ litros (meta diaria)
+  \item Recomendación según el promedio: consumo adecuado o aumentar el consumo
+\end{itemize}
+
+\seccion{4.3 Tabla de métricas}
+
+\begin{table}[H]
+\centering
+\caption{Métricas calculadas -- Práctica 3}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+  >{\columncolor{AguaColor!15}}p{4.5cm}
+  >{\columncolor{RowLight}}p{9cm}
+}
+\toprule
+\rowcolor{AguaColor}
+\textcolor{white}{\textbf{Métrica}} &
+\textcolor{white}{\textbf{Descripción}} \\
+\midrule
+Registros      & Días con dato válido \\
+Total          & Litros sumados en todo el periodo \\
+Promedio       & Promedio diario de consumo \\
+Mayor / Menor  & Día con más y menos consumo \\
+Meta cumplida  & Días con $\geq 2.0$ litros \\
+Recomendación  & Resultado según el promedio obtenido \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\seccion{4.4 Resultados obtenidos}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figures/resultado_p3.png}
+  \caption{Salida del programa -- Práctica 3: Análisis de consumo de agua}
+\end{figure}
+
+\seccion{4.5 Conclusión}
+
+El programa muestra si una persona está tomando suficiente agua cada día.
+Con el promedio y los días en que se cumplió la meta se puede ver qué tan
+constante es el hábito y en qué días hace falta mejorar.
+
+\newpage
+
+% =========================================================
+%  PRÁCTICA 4: ACTIVIDAD FÍSICA
+% =========================================================
+\section{Práctica 4: Registro de actividad física}
+
+\appheader{FisicaColor}{Descripción general}
+
+El programa lee \texttt{activida\_fisica.txt} con los minutos de ejercicio registrados por día.
+Algunos datos incluyen la unidad escrita como \texttt{"60 min"} o \texttt{"30 minutos"}
+por lo que se usa la función \texttt{limpiar} de la sección~1.4 para quitarla antes de convertir.
+
+\seccion{5.1 Datos de entrada}
+
+\begin{itemize}
+  \item Archivo: \texttt{activida\_fisica.txt}
+  \item Formato: \texttt{30}, \texttt{60 min} o \texttt{treinta minutos}
+  \item Columna generada: \texttt{minutos} (número decimal)
+\end{itemize}
+
+\seccion{5.2 Cálculos realizados}
+
+\begin{itemize}
+  \item Total de registros, suma total, promedio, máximo y mínimo
+  \item Días sin actividad (valor igual a $0$)
+  \item Nivel de actividad con \texttt{if/elif/else}:
+        Adecuada ($\geq 30$ min), Moderada ($\geq 15$ min) o Baja
+\end{itemize}
+
+\seccion{5.3 Tabla de métricas}
+
+\begin{table}[H]
+\centering
+\caption{Métricas calculadas -- Práctica 4}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+  >{\columncolor{FisicaColor!15}}p{4.5cm}
+  >{\columncolor{RowLight}}p{9cm}
+}
+\toprule
+\rowcolor{FisicaColor}
+\textcolor{white}{\textbf{Métrica}} &
+\textcolor{white}{\textbf{Descripción}} \\
+\midrule
+Registros          & Días con dato válido \\
+Total              & Minutos sumados en todo el periodo \\
+Promedio           & Promedio diario de minutos de ejercicio \\
+Mayor / Menor      & Día con más y menos actividad \\
+Días sin ejercicio & Días con valor igual a $0$ minutos \\
+Nivel              & Adecuada, Moderada o Baja según el promedio \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\seccion{5.4 Resultados obtenidos}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\textwidth]{Figures/resultado_p4.png}
+  \caption{Salida del programa -- Práctica 4: Registro de actividad física}
+\end{figure}
+
+\seccion{5.5 Conclusión}
+
+El programa permite ver si una persona hace ejercicio de forma regular.
+Los días sin actividad y el promedio diario indican qué tan constante es el hábito.
+Si el nivel es bajo o moderado conviene establecer una rutina más seguida para
+llegar a los 30 minutos diarios recomendados.
+
+\end{document}

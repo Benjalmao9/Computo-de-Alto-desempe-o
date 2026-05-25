@@ -1,0 +1,56 @@
+======================================================================
+RESULTADO 1 — Distribución de instituciones y estudiantes
+======================================================================
+Escuelas únicas públicas : 16
+Escuelas únicas privadas : 4
+
+Estudiantes por tipo de institución:
+  - Pública: 6400
+  - Privada: 1600
+
+======================================================================
+RESULTADO 2 — Estudiante con la calificación más alta
+======================================================================
+Nombre              : Diana
+Apellido            : Silva
+Escuela             : Colegio De Estudios Científicos Puebla Norte
+Tipo de institución : Pública
+Tipo de examen      : Idiomas
+Calificación        : 10.00
+
+======================================================================
+RESULTADO 3 — Institución con más aprobados (>= 6.0)
+======================================================================
+Institución           : Colegio Nueva Era
+Tipo                  : Privada
+Número de aprobados   : 278
+Promedio institucional: 7.04
+Mejor calificación    : 10.00
+Mejores estudiantes   : 5 empatados
+  - José Reyes (Conocimiento General) — 10.00
+  - Natalia Romero (Idiomas) — 10.00  
+  - Diego Morales (Conocimiento General) — 10.00
+  - María Flores (Conocimiento General) — 10.00
+  - Eduardo Aguilar (Conocimiento General) — 10.00
+
+Total de registros inválidos descartados: 296
+
+======================================================================
+PRIMEROS 15 VALORES NORMALIZADOS
+======================================================================
+   nombre apellido                                      escuela tipo_institucion          tipo_examen calificacion  calificacion_normalizada
+    María    Reyes           Preparatoria Pública Leona Vicario          Pública              Idiomas         ocho                      8.00
+   Isabel   Santos                  Instituto Moderno Del Valle          Privada Conocimiento General         52.0                      5.20
+ Fernanda   Romero                 Centro Escolar Benito Juárez          Pública Conocimiento General          8.7                      8.70
+    Diana    Rojas Colegio De Estudios Científicos Puebla Norte          Pública              Idiomas          6.4                      6.40
+     Luis    Gómez        Colegio De Bachilleres Plantel Puebla          Pública Conocimiento General          4.7                      4.70
+    Diana    Silva Colegio De Estudios Científicos Puebla Norte          Pública              Idiomas         10.0                     10.00
+    Diana    Ortiz                       Preparatoria San Ángel          Privada              Idiomas         64.2                      6.42
+   Camila Martínez         Bachillerato General Francisco Villa          Pública              Idiomas          9.8                      9.80
+   Carlos  Navarro         Bachillerato Oficial Hermanos Serdán          Pública              Idiomas          6.2                      6.20
+  Eduardo Castillo         Bachillerato General Emiliano Zapata          Pública Conocimiento General        nueve                      9.00
+Alejandro  Navarro         Bachillerato General Francisco Villa          Pública              Idiomas          9.8                      9.80
+  Eduardo   Campos                  Instituto Moderno Del Valle          Privada Conocimiento General         84.2                      8.42
+    Lucía   Campos      Centro De Bachillerato Ignacio Zaragoza          Pública Conocimiento General          6.3                      6.30
+     Hugo  Ramírez    Bachillerato Comunitario Vicente Guerrero          Pública              Idiomas          9.9                      9.90
+   Carlos   Medina    Bachillerato Comunitario Vicente Guerrero          Pública              Idiomas          9.9                      9.90

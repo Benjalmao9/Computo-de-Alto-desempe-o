@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>LibroMundo</title>
+
+    <style>
+        :root {
+            --bg: #faf8f3;
+            --surface: #ffffff;
+            --border: #e2ddd4;
+            --accent: #3d52a0;
+            --accent-lt: #5c73c9;
+            --header-bg: #1e2a5e;
+            --text: #1a1a2e;
+            --muted: #8a8fa8;
+            --tag-rest: #0077b6;
+            --tag-soap: #6a0572;
+            --pre-bg: #f0ede4;
+            --th-bg: #e4e8f5;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: #f5efe6;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        header .logo {
+            width: 56px;
+            height: 56px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 2px 0 0;
+            font-size: 0.85rem;
+            opacity: .75;
+            font-family: Arial, sans-serif;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 4px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 22px;
+        }
+
+        .tab-btn img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        .tab-btn {
+            padding: 10px 22px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            font-weight: bold;
+            background-color: transparent;
+            color: var(--muted);
+            transition: background .15s, color .15s;
+            position: relative;
+            bottom: -2px;
+        }
+
+        .tab-btn:hover {
+            background-color: var(--surface);
+            color: var(--accent);
+        }
+
+        .tab-btn.activa {
+            background-color: var(--surface);
+            color: var(--accent);
+            border-color: var(--border);
+            border-bottom-color: var(--surface);
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.visible { display: block; }
+
+        .contenedor {
+            background-color: var(--surface);
+            padding: 22px 24px;
+            border-radius: 10px;
+            margin-bottom: 22px;
+            border: 1px solid var(--border);
+        }
+
+        .contenedor h2 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.15rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        label {
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+
+        input, select {
+            padding: 8px 10px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            background-color: var(--bg);
+            font-size: 0.95rem;
+            color: var(--text);
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus, select:focus {
+            outline: 2px solid var(--accent-lt);
+            border-color: var(--accent-lt);
+        }
+
+        button {
+            padding: 9px 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            font-weight: bold;
+            transition: background .2s;
+        }
+
+        .btn-agregar    { background-color: #2e7d32; color: white; }
+        .btn-consultar  { background-color: var(--tag-rest); color: white; }
+        .btn-actualizar { background-color: #e65100; color: white; }
+
+        button:hover { filter: brightness(1.12); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 9px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--th-bg);
+            color: var(--accent);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+
+        tr:nth-child(even) td { background-color: #fdf6ec; }
+
+        .paneles {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .panel {
+            flex: 1;
+            min-width: 320px;
+            border-radius: 8px;
+            padding: 16px 18px;
+            border: 1px solid var(--border);
+        }
+
+        .panel-rest { background-color: #f0f6ff; border-top: 4px solid var(--tag-rest); }
+        .panel-soap { background-color: #f0fff5; border-top: 4px solid var(--tag-soap); }
+
+        .panel h2 { margin-top: 0; font-size: 1.1rem; }
+        .panel-rest h2 { color: var(--tag-rest); }
+        .panel-soap h2 { color: var(--tag-soap); }
+
+        .panel h3 {
+            font-size: 0.9rem;
+            margin: 14px 0 4px;
+            font-family: Arial, sans-serif;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .4px;
+        }
+
+        pre {
+            background-color: var(--pre-bg);
+            border: 1px solid var(--border);
+            padding: 10px 12px;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-size: 0.82rem;
+            font-family: 'Courier New', monospace;
+            color: #2c1a00;
+        }
+
+        .titulo-seccion {
+            font-family: 'Georgia', serif;
+            font-size: 1.6rem;
+            font-weight: normal;
+            color: var(--accent);
+            margin: 0 0 24px;
+            padding: 0;
+            border: none;
+            display: inline-block;
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 3px;
+            background-color: var(--accent-lt);
+            border-radius: 2px;
+            margin-top: 6px;
+        }
+
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+
+        .libro-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .libro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+        }
+
+        .libro-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            background-color: var(--th-bg);
+            display: block;
+        }
+
+        .libro-card-titulo {
+            padding: 10px 12px;
+            font-size: 0.88rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.abierto { display: flex; }
+
+        .modal {
+            background: var(--surface);
+            border-radius: 12px;
+            max-width: 560px;
+            width: 90%;
+            max-height: 88vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: modalEntrada .2s ease;
+        }
+
+        @keyframes modalEntrada {
+            from { transform: translateY(20px); opacity: 0; }
+            to   { transform: translateY(0);    opacity: 1; }
+        }
+
+        .modal-portada {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            background-color: var(--th-bg);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .modal-body { padding: 22px 24px; }
+
+        .modal-titulo { font-size: 1.3rem; color: var(--accent); margin: 0 0 4px; }
+
+        .modal-autor {
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin: 0 0 14px;
+        }
+
+        .modal-desc {
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .modal-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 0.82rem;
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+
+        .modal-meta-item label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: .5px;
+            color: var(--muted);
+            margin-bottom: 2px;
+        }
+
+        .modal-meta-item span { color: var(--text); font-weight: bold; }
+        .modal-precio { font-size: 1.15rem; color: var(--accent); }
+
+        .modal-cerrar {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            background: rgba(0,0,0,0.4);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+        }
+
+        .modal-wrapper { position: relative; }
+
+        .form-card {
+            background-color: var(--surface);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            border-left: 5px solid var(--accent);
+            padding: 24px 26px;
+            box-shadow: 0 4px 16px rgba(74,26,0,.07);
+        }
+
+        .form-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .form-header-icon { font-size: 1.5rem; line-height: 1; margin-top: 2px; }
+
+        .form-header-text h2 {
+            margin: 0 0 3px;
+            color: var(--accent);
+            font-size: 1.1rem;
+            border: none;
+            padding: 0;
+        }
+
+        .form-header-text p {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .form-row { display: grid; gap: 14px; margin-bottom: 14px; }
+        .form-row-1 { grid-template-columns: 1fr 3fr 2fr; }
+        .form-row-2 { grid-template-columns: 3fr 2fr; }
+
+        .form-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .form-actions-left { display: flex; gap: 8px; flex: 1; flex-wrap: wrap; }
+
+        .btn-icon { display: inline-flex; align-items: center; gap: 6px; }
+
+        .btn-eliminar-outline {
+            padding: 9px 16px;
+            cursor: pointer;
+            border: 1.5px solid #b71c1c;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 0.88rem;
+            font-weight: bold;
+            background-color: transparent;
+            color: #b71c1c;
+            transition: background .2s, color .2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-eliminar-outline:hover { background-color: #b71c1c; color: white; }
+
+        .form-tip {
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 0.76rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .status-badge {
+            display: none;
+            margin-top: 14px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: Arial, sans-serif;
+            font-size: 0.85rem;
+            font-weight: bold;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-badge.visible { display: flex; }
+        .status-badge.ok    { background-color: #e8f5e9; color: #1b5e20; border: 1px solid #a5d6a7; }
+        .status-badge.error { background-color: #ffebee; color: #b71c1c; border: 1px solid #ef9a9a; }
+        .status-badge.info  { background-color: #e3f2fd; color: #0d47a1; border: 1px solid #90caf9; }
+
+        footer {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted);
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img class="logo"
+            src="https://imgs.search.brave.com/hureKNlZAC2oRpq0c6Poqb8fjZyY5UTgJJxiRa7zl9g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjIw/NTA5ODIyOC9waG90/by9saWJyb3Mud2Vi/cD9hPTEmYj0xJnM9/NjEyeDYxMiZ3PTAm/az0yMCZjPWtUWUpN/WVNicW9XMHN0VS1k/WGRqbUZLdE5yamEw/ZjhvNU1QNzlJZlFB/Q289"
+            alt="LibroMundo" />
+        <div>
+            <h1>LibroMundo</h1>
+            <p>Tienda de libros</p>
+        </div>
+    </header>
+
+    <main>
+
+        <nav class="tabs">
+            <button class="tab-btn activa" onclick="cambiarPestana('catalogo', this)">
+                <img src="https://imgs.search.brave.com/4wewpQKN9InGNxHavR3tzV_obljrmkIGaRq5deZsBFo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cy4x/MjNyZi5jb20vNDUw/d20vZ3VkZWxsYS9n/dWRlbGxhMjAwNi9n/dWRlbGxhMjAwNjAw/MTAwLzE0OTM3ODA2/Ni1saWJyb3Mtc29i/cmUtdW4tZm9uZG8t/ZGUtZXN0YW50ZXIl/QzMlQURhLmpwZz92/ZXI9Ng" alt="" />Catálogo
+            </button>
+            <button class="tab-btn" onclick="cambiarPestana('gestionar', this)">
+                <img src="https://imgs.search.brave.com/4wchVcCxMWFZyi9ywmRcSSQ0IeXFNaxCH5HaWaSACt0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNS8w/My8zMC8xOC8yNS9t/YWduaWZ5aW5nLWds/YXNzLTY5OTc3N182/NDAuanBn" alt="" />Gestionar
+            </button>
+            <button class="tab-btn" onclick="cambiarPestana('api', this)">API</button>
+        </nav>
+
+        <div id="catalogo" class="tab-panel visible">
+            <div class="contenedor">
+                <h2 class="titulo-seccion">Títulos en venta</h2>
+                <div class="catalogo-grid" id="catalogoGrid"></div>
+            </div>
+        </div>
+
+        <div id="gestionar" class="tab-panel">
+            <div class="form-card">
+                <div class="form-header">
+                    <div class="form-header-icon">📖</div>
+                    <div class="form-header-text">
+                        <h2>Datos del libro</h2>
+                        <p>Completa los campos y usa las acciones de abajo</p>
+                    </div>
+                </div>
+
+                <div class="form-row form-row-1">
+                    <div class="form-field">
+                        <label>ID del libro</label>
+                        <input type="number" id="idLibro" placeholder="Ej. 0042" value="1" />
+                    </div>
+                    <div class="form-field">
+                        <label>Título</label>
+                        <input type="text" id="tituloLibro" placeholder="Nombre del libro" value="Cien años de soledad" />
+                    </div>
+                    <div class="form-field">
+                        <label>Autor</label>
+                        <input type="text" id="autorLibro" placeholder="Nombre del autor" value="Gabriel García Márquez" />
+                    </div>
+                </div>
+
+                <div class="form-row form-row-2">
+                    <div class="form-field">
+                        <label>Género</label>
+                        <select id="generoLibro">
+                            <option value="">— Sin especificar —</option>
+                            <option>Realismo mágico</option>
+                            <option>Novela</option>
+                            <option>Ciencia ficción</option>
+                            <option>Terror</option>
+                            <option>Historia</option>
+                            <option>Filosofía</option>
+                            <option>Poesía</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label>Precio (MXN)</label>
+                        <input type="number" id="precioLibro" placeholder="0.00" value="320" />
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <div class="form-actions-left">
+                        <button class="btn-agregar" onclick="agregarLibro()">
+                            <span class="btn-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                Agregar
+                            </span>
+                        </button>
+                        <button class="btn-consultar" onclick="consultarLibro()">
+                            <span class="btn-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                Consultar
+                            </span>
+                        </button>
+                        <button class="btn-actualizar" onclick="actualizarLibro()">
+                            <span class="btn-icon">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                                Actualizar
+                            </span>
+                        </button>
+                    </div>
+                    <button class="btn-eliminar-outline" onclick="eliminarLibro()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+                        Eliminar libro
+                    </button>
+                </div>
+
+                <div class="status-badge" id="statusBadge"></div>
+
+                <p class="form-tip">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    Para actualizar, ingresa primero el ID del libro.
+                </p>
+            </div>
+        </div>
+
+        <div id="api" class="tab-panel">
+            <div class="contenedor">
+                <div class="paneles">
+                    <div class="panel panel-rest">
+                        <h2>REST</h2>
+                        <p style="font-family:Arial,sans-serif;font-size:.88rem;color:var(--muted)">URL + método HTTP · Respuesta JSON</p>
+                        <h3>Solicitud</h3>
+                        <pre id="solicitudRest">Realiza una operación en la pestaña Gestionar.</pre>
+                        <h3>Respuesta</h3>
+                        <pre id="respuestaRest">Aquí aparecerá la respuesta REST.</pre>
+                    </div>
+                    <div class="panel panel-soap">
+                        <h2>SOAP</h2>
+                        <p style="font-family:Arial,sans-serif;font-size:.88rem;color:var(--muted)">Mensaje XML · Envelope + Body</p>
+                        <h3>Solicitud</h3>
+                        <pre id="solicitudSoap">Realiza una operación en la pestaña Gestionar.</pre>
+                        <h3>Respuesta</h3>
+                        <pre id="respuestaSoap">Aquí aparecerá la respuesta SOAP.</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>LibroMundo · Tienda de libros · 2026</footer>
+
+    <div class="modal-overlay" id="modalOverlay" onclick="cerrarModalOverlay(event)">
+        <div class="modal-wrapper">
+            <div class="modal" id="modalLibro">
+                <img class="modal-portada" id="modalPortada" src="" alt="" />
+                <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+                <div class="modal-body">
+                    <h2 class="modal-titulo" id="modalTitulo"></h2>
+                    <p class="modal-autor" id="modalAutor"></p>
+                    <p class="modal-desc" id="modalDesc"></p>
+                    <div class="modal-meta">
+                        <div class="modal-meta-item">
+                            <label>Género</label>
+                            <span id="modalGenero"></span>
+                        </div>
+                        <div class="modal-meta-item">
+                            <label>ID</label>
+                            <span id="modalId"></span>
+                        </div>
+                        <div class="modal-meta-item" style="grid-column:1/-1">
+                            <label>Precio</label>
+                            <span class="modal-precio" id="modalPrecio"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let libros = [
+            {
+                id: 1, titulo: "Cien años de soledad", autor: "Gabriel García Márquez",
+                genero: "Realismo mágico", precio: 320,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780060883287-L.jpg",
+                descripcion: "La saga de la familia Buendía a lo largo de siete generaciones en el mítico pueblo de Macondo."
+            },
+            {
+                id: 2, titulo: "1984", autor: "George Orwell",
+                genero: "Ciencia ficción", precio: 210,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+                descripcion: "En un futuro distópico, el Partido controla cada pensamiento bajo la vigilancia del Gran Hermano."
+            },
+            {
+                id: 3, titulo: "El nombre de la rosa", autor: "Umberto Eco",
+                genero: "Novela", precio: 285,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780156001311-L.jpg",
+                descripcion: "Un monje medieval investiga una serie de misteriosas muertes en una abadía italiana del siglo XIV."
+            },
+            {
+                id: 4, titulo: "El amor en los tiempos del cólera", autor: "Gabriel García Márquez",
+                genero: "Realismo mágico", precio: 295,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780307389732-L.jpg",
+                descripcion: "Un amor que perdura más de cincuenta años entre Fermina Daza y Florentino Ariza."
+            },
+            {
+                id: 5, titulo: "Rebelión en la granja", autor: "George Orwell",
+                genero: "Novela", precio: 210,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780451526342-L.jpg",
+                descripcion: "Los animales de una granja se rebelan contra sus dueños en esta poderosa fábula política."
+            },
+            {
+                id: 6, titulo: "Rayuela", autor: "Julio Cortázar",
+                genero: "Novela", precio: 285,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780394752846-L.jpg",
+                descripcion: "Una novela experimental que puede leerse en orden convencional o saltando capítulos, siguiendo a Horacio Oliveira entre París y Buenos Aires."
+            },
+            {
+                id: 7, titulo: "Fahrenheit 451", autor: "Ray Bradbury",
+                genero: "Ciencia ficción", precio: 240,
+                imagen: "https://covers.openlibrary.org/b/isbn/9781451673319-L.jpg",
+                descripcion: "En una sociedad donde los libros están prohibidos, un bombero comienza a cuestionar su deber."
+            },
+            {
+                id: 8, titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes",
+                genero: "Novela", precio: 320,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780060934347-L.jpg",
+                descripcion: "Un hidalgo enloquecido por las novelas de caballería emprende aventuras con su fiel escudero Sancho Panza."
+            },
+            {
+                id: 9, titulo: "La sombra del viento", autor: "Carlos Ruiz Zafón",
+                genero: "Novela", precio: 295,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780143034902-L.jpg",
+                descripcion: "Un joven descubre un libro misterioso que lo llevará a desentrañar un oscuro secreto en la Barcelona de posguerra."
+            },
+            {
+                id: 10, titulo: "El extranjero", autor: "Albert Camus",
+                genero: "Novela", precio: 195,
+                imagen: "https://covers.openlibrary.org/b/isbn/9780679720201-L.jpg",
+                descripcion: "Meursault, un hombre indiferente al mundo que lo rodea, comete un crimen absurdo y enfrenta la condena de una sociedad que no comprende."
+            },
+        ];
+
+        function cambiarPestana(id, boton) {
+            document.querySelectorAll(".tab-panel").forEach(function(p) { p.classList.remove("visible"); });
+            document.querySelectorAll(".tab-btn").forEach(function(b) { b.classList.remove("activa"); });
+            document.getElementById(id).classList.add("visible");
+            boton.classList.add("activa");
+        }
+
+        function irApiTab() {
+            const btn = document.querySelectorAll(".tab-btn")[2];
+            cambiarPestana("api", btn);
+        }
+
+        function mostrarTabla() {
+            const grid = document.getElementById("catalogoGrid");
+            grid.innerHTML = libros.map(function(l) {
+                return `<div class="libro-card" onclick="abrirModal(${l.id})">
+                    <img src="${l.imagen || ''}" alt="Portada de ${l.titulo}"
+                         onerror="this.style.background='var(--th-bg)';this.removeAttribute('src')" />
+                    <div class="libro-card-titulo">${l.titulo}</div>
+                </div>`;
+            }).join("");
+        }
+
+        function abrirModal(id) {
+            const l = libros.find(function(x) { return x.id === id; });
+            if (!l) return;
+            document.getElementById("modalPortada").src        = l.imagen || '';
+            document.getElementById("modalPortada").alt        = l.titulo;
+            document.getElementById("modalTitulo").textContent = l.titulo;
+            document.getElementById("modalAutor").textContent  = l.autor;
+            document.getElementById("modalDesc").textContent   = l.descripcion || '';
+            document.getElementById("modalGenero").textContent = l.genero;
+            document.getElementById("modalId").textContent     = l.id;
+            document.getElementById("modalPrecio").textContent = '$' + l.precio + ' MXN';
+            document.getElementById("modalOverlay").classList.add("abierto");
+            document.body.style.overflow = "hidden";
+        }
+
+        function cerrarModal() {
+            document.getElementById("modalOverlay").classList.remove("abierto");
+            document.body.style.overflow = "";
+        }
+
+        function cerrarModalOverlay(e) {
+            if (e.target === document.getElementById("modalOverlay")) cerrarModal();
+        }
+
+        function obtenerId() {
+            return Number(document.getElementById("idLibro").value);
+        }
+
+        function obtenerDatos() {
+            return {
+                id:     Number(document.getElementById("idLibro").value),
+                titulo: document.getElementById("tituloLibro").value,
+                autor:  document.getElementById("autorLibro").value,
+                genero: document.getElementById("generoLibro").value,
+                precio: Number(document.getElementById("precioLibro").value),
+            };
+        }
+
+        function camposCompletos() {
+            const d = obtenerDatos();
+            return d.id && d.titulo && d.autor && d.precio;
+        }
+
+        function buscarLibro(id) {
+            return libros.find(function(l) { return l.id === id; });
+        }
+
+        function mostrarBadge(mensaje, tipo) {
+            const badge = document.getElementById("statusBadge");
+            const iconos = {
+                ok:    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>',
+                error: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+                info:  '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+            };
+            badge.innerHTML = (iconos[tipo] || '') + mensaje;
+            badge.className = 'status-badge visible ' + tipo;
+            clearTimeout(badge._timer);
+            badge._timer = setTimeout(function() { badge.classList.remove("visible"); }, 4000);
+        }
+
+        function mostrarResultado(rSol, rRes, sSol, sRes) {
+            document.getElementById("solicitudRest").textContent = rSol;
+            document.getElementById("respuestaRest").textContent = rRes;
+            document.getElementById("solicitudSoap").textContent = sSol;
+            document.getElementById("respuestaSoap").textContent = sRes;
+            try {
+                const parsed = JSON.parse(rRes);
+                if (parsed.error)            mostrarBadge(parsed.error, "error");
+                else if (parsed.mensaje)     mostrarBadge(parsed.mensaje, "ok");
+                else if (parsed.total !== undefined) mostrarBadge("Se encontraron " + parsed.total + " libro(s).", "info");
+            } catch(e) {}
+            irApiTab();
+        }
+
+        function agregarLibro() {
+            if (!camposCompletos()) { alert("Completa todos los campos para agregar un libro."); return; }
+            const d = obtenerDatos();
+            const existe = buscarLibro(d.id);
+            const rSol = `POST /libros HTTP/1.1\nHost: api.libromundo.com\nContent-Type: application/json\n\n${JSON.stringify({ id: d.id, titulo: d.titulo, autor: d.autor, genero: d.genero, precio: d.precio }, null, 2)}`;
+            const sSol = `<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\n  <soap:Body>\n    <AgregarLibro>\n      <id>${d.id}</id>\n      <titulo>${d.titulo}</titulo>\n      <autor>${d.autor}</autor>\n      <genero>${d.genero}</genero>\n      <precio>${d.precio}</precio>\n    </AgregarLibro>\n  </soap:Body>\n</soap:Envelope>`;
+            let rRes, sRes;
+            if (existe) {
+                rRes = JSON.stringify({ error: "Conflicto: ya existe un libro con ese ID.", id: d.id }, null, 2);
+                sRes = `<soap:Envelope>\n  <soap:Body>\n    <AgregarLibroResponse>\n      <error>Conflicto: ya existe un libro con ese ID.</error>\n      <id>${d.id}</id>\n    </AgregarLibroResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            } else {
+                libros.push(d);
+                mostrarTabla();
+                rRes = JSON.stringify({ mensaje: "Libro agregado correctamente.", libro: d }, null, 2);
+                sRes = `<soap:Envelope>\n  <soap:Body>\n    <AgregarLibroResponse>\n      <mensaje>Libro agregado correctamente.</mensaje>\n      <id>${d.id}</id>\n      <titulo>${d.titulo}</titulo>\n    </AgregarLibroResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            }
+            mostrarResultado(rSol, rRes, sSol, sRes);
+        }
+
+        function consultarLibro() {
+            const d = obtenerDatos();
+            const filtros = {};
+            if (d.id)     filtros.id     = d.id;
+            if (d.titulo) filtros.titulo = d.titulo;
+            if (d.autor)  filtros.autor  = d.autor;
+            if (d.genero) filtros.genero = d.genero;
+            if (d.precio) filtros.precio = d.precio;
+            const sinFiltros = Object.keys(filtros).length === 0;
+            const resultados = sinFiltros ? libros : libros.filter(function(l) {
+                if (filtros.id     && l.id === filtros.id)                                           return true;
+                if (filtros.titulo && l.titulo.toLowerCase().includes(filtros.titulo.toLowerCase())) return true;
+                if (filtros.autor  && l.autor.toLowerCase().includes(filtros.autor.toLowerCase()))   return true;
+                if (filtros.genero && l.genero === filtros.genero)                                   return true;
+                if (filtros.precio && l.precio === filtros.precio)                                   return true;
+                return false;
+            });
+            const queryString = Object.entries(filtros).map(function([k,v]) { return k + "=" + encodeURIComponent(v); }).join("&");
+            const url = "/libros" + (queryString ? "?" + queryString : "");
+            const rSol = `GET ${url} HTTP/1.1\nHost: api.libromundo.com`;
+            const rRes = resultados.length > 0
+                ? JSON.stringify({ total: resultados.length, libros: resultados }, null, 2)
+                : JSON.stringify({ error: "No se encontraron libros con los criterios indicados." }, null, 2);
+            const filtroXml = Object.entries(filtros).map(function([k,v]) { return `      <${k}>${v}</${k}>`; }).join("\n");
+            const sSol = `<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\n  <soap:Body>\n    <ConsultarLibros>\n${filtroXml || "      <!-- sin filtros -->"}\n    </ConsultarLibros>\n  </soap:Body>\n</soap:Envelope>`;
+            const sRes = resultados.length > 0
+                ? `<soap:Envelope>\n  <soap:Body>\n    <ConsultarLibrosResponse>\n      <total>${resultados.length}</total>\n${resultados.map(function(l) { return `      <libro>\n        <id>${l.id}</id>\n        <titulo>${l.titulo}</titulo>\n        <autor>${l.autor}</autor>\n        <genero>${l.genero}</genero>\n        <precio>${l.precio}</precio>\n      </libro>`; }).join("\n")}\n    </ConsultarLibrosResponse>\n  </soap:Body>\n</soap:Envelope>`
+                : `<soap:Envelope>\n  <soap:Body>\n    <ConsultarLibrosResponse>\n      <error>No se encontraron libros con los criterios indicados.</error>\n    </ConsultarLibrosResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            mostrarResultado(rSol, rRes, sSol, sRes);
+        }
+
+        function actualizarLibro() {
+            if (!camposCompletos()) { alert("Completa todos los campos para actualizar un libro."); return; }
+            const d = obtenerDatos();
+            const libro = buscarLibro(d.id);
+            const rSol = `PUT /libros/${d.id} HTTP/1.1\nHost: api.libromundo.com\nContent-Type: application/json\n\n${JSON.stringify({ titulo: d.titulo, autor: d.autor, genero: d.genero, precio: d.precio }, null, 2)}`;
+            const sSol = `<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\n  <soap:Body>\n    <ActualizarLibro>\n      <id>${d.id}</id>\n      <titulo>${d.titulo}</titulo>\n      <autor>${d.autor}</autor>\n      <genero>${d.genero}</genero>\n      <precio>${d.precio}</precio>\n    </ActualizarLibro>\n  </soap:Body>\n</soap:Envelope>`;
+            let rRes, sRes;
+            if (libro) {
+                libro.titulo = d.titulo; libro.autor = d.autor; libro.genero = d.genero; libro.precio = d.precio;
+                mostrarTabla();
+                rRes = JSON.stringify({ mensaje: "Libro actualizado correctamente.", libro: libro }, null, 2);
+                sRes = `<soap:Envelope>\n  <soap:Body>\n    <ActualizarLibroResponse>\n      <mensaje>Libro actualizado correctamente.</mensaje>\n      <id>${libro.id}</id>\n      <titulo>${libro.titulo}</titulo>\n    </ActualizarLibroResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            } else {
+                rRes = JSON.stringify({ error: "No se puede actualizar: el libro no existe." }, null, 2);
+                sRes = `<soap:Envelope>\n  <soap:Body>\n    <ActualizarLibroResponse>\n      <error>No se puede actualizar: el libro no existe.</error>\n    </ActualizarLibroResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            }
+            mostrarResultado(rSol, rRes, sSol, sRes);
+        }
+
+        function eliminarLibro() {
+            const id = obtenerId();
+            const libro = buscarLibro(id);
+            const rSol = `DELETE /libros/${id} HTTP/1.1\nHost: api.libromundo.com`;
+            const sSol = `<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">\n  <soap:Body>\n    <EliminarLibro>\n      <id>${id}</id>\n    </EliminarLibro>\n  </soap:Body>\n</soap:Envelope>`;
+            let rRes, sRes;
+            if (libro) {
+                libros = libros.filter(function(l) { return l.id !== id; });
+                mostrarTabla();
+                rRes = JSON.stringify({ mensaje: "Libro eliminado correctamente.", id: id }, null, 2);
+                sRes = `<soap:Envelope>\n  <soap:Body>\n    <EliminarLibroResponse>\n      <mensaje>Libro eliminado correctamente.</mensaje>\n      <id>${id}</id>\n    </EliminarLibroResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            } else {
+                rRes = JSON.stringify({ error: "No se encontró el libro para eliminar." }, null, 2);
+                sRes = `<soap:Envelope>\n  <soap:Body>\n    <EliminarLibroResponse>\n      <error>No se encontró el libro para eliminar.</error>\n    </EliminarLibroResponse>\n  </soap:Body>\n</soap:Envelope>`;
+            }
+            mostrarResultado(rSol, rRes, sSol, sRes);
+        }
+
+        mostrarTabla();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1161 @@
+ANALISIS DE TRANSACCIONES FINANCIERAS
+
+ACTIVIDAD DE COMPRA
+  Total de transacciones validas : 5000
+  Numero de clientes unicos      : 300
+  Monto total procesado          : $27,358,906.70
+  Cliente con mas transacciones  : c0272 (29 compras)
+  Cliente con mayor monto acum.  : c0117 ($271,864.40)
+  Ticket promedio general        : $5,471.78
+  Mes con mayor actividad        : 01 (457 transacciones)
+
+CATEGORIAS Y PAGOS
+  Categoria con mas transacciones: electronico (516)
+  Categoria con mayor monto      : electronico ($6,785,760.80)
+  Total compras MSI              : 531
+  Plazo MSI mas utilizado        : 6 meses
+  Monto promedio en MSI          : $8,608.22
+
+RECOMENDACIONES
+
+  [1] Cliente : c0106
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [2] Cliente : c0068
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: turismo. Sugerir promoción en turismo.
+
+  [3] Cliente : c0136
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [4] Cliente : c0278
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [5] Cliente : c0278
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [6] Cliente : c0238
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [7] Cliente : c0008
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: combustible. Sugerir promoción en combustible.
+
+  [8] Cliente : c0008
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: combustible. Sugerir promoción en combustible.
+
+  [9] Cliente : c0144
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [10] Cliente : c0144
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [11] Cliente : c0144
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [12] Cliente : c0081
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [13] Cliente : c0081
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [14] Cliente : c0285
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [15] Cliente : c0285
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [16] Cliente : c0285
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [17] Cliente : c0126
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [18] Cliente : c0173
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: cursos. Sugerir promoción en cursos.
+
+  [19] Cliente : c0132
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [20] Cliente : c0132
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [21] Cliente : c0145
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [22] Cliente : c0145
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [23] Cliente : c0157
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [24] Cliente : c0180
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [25] Cliente : c0180
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [26] Cliente : c0242
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [27] Cliente : c0163
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 3/3 activo en 3 MSI. Categoría frecuente: alimentos. Sugerir promoción en alimentos.
+
+  [28] Cliente : c0163
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: alimentos. Sugerir promoción en alimentos.
+
+  [29] Cliente : c0088
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [30] Cliente : c0067
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [31] Cliente : c0226
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [32] Cliente : c0031
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [33] Cliente : c0155
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [34] Cliente : c0143
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [35] Cliente : c0221
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [36] Cliente : c0196
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [37] Cliente : c0181
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [38] Cliente : c0041
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [39] Cliente : c0207
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [40] Cliente : c0098
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [41] Cliente : c0098
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [42] Cliente : c0098
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [43] Cliente : c0237
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [44] Cliente : c0133
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: boletos. Sugerir promoción en boletos.
+
+  [45] Cliente : c0011
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [46] Cliente : c0011
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [47] Cliente : c0267
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [48] Cliente : c0267
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [49] Cliente : c0090
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [50] Cliente : c0090
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [51] Cliente : c0090
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [52] Cliente : c0084
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [53] Cliente : c0084
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [54] Cliente : c0128
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [55] Cliente : c0299
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [56] Cliente : c0299
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [57] Cliente : c0012
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [58] Cliente : c0195
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [59] Cliente : c0093
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [60] Cliente : c0212
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 12/12 activo en 12 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [61] Cliente : c0103
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [62] Cliente : c0103
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [63] Cliente : c0103
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [64] Cliente : c0261
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [65] Cliente : c0194
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [66] Cliente : c0298
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [67] Cliente : c0138
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [68] Cliente : c0138
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [69] Cliente : c0224
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [70] Cliente : c0224
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [71] Cliente : c0224
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [72] Cliente : c0208
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: farmacia. Sugerir promoción en farmacia.
+
+  [73] Cliente : c0082
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [74] Cliente : c0082
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [75] Cliente : c0017
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: boletos. Sugerir promoción en boletos.
+
+  [76] Cliente : c0219
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [77] Cliente : c0141
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [78] Cliente : c0141
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [79] Cliente : c0199
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [80] Cliente : c0199
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [81] Cliente : c0150
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [82] Cliente : c0150
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [83] Cliente : c0150
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [84] Cliente : c0239
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [85] Cliente : c0239
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [86] Cliente : c0239
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [87] Cliente : c0239
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [88] Cliente : c0127
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: farmacia. Sugerir promoción en farmacia.
+
+  [89] Cliente : c0156
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [90] Cliente : c0001
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [91] Cliente : c0069
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [92] Cliente : c0069
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [93] Cliente : c0201
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 3/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [94] Cliente : c0201
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [95] Cliente : c0232
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [96] Cliente : c0099
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [97] Cliente : c0044
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [98] Cliente : c0018
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [99] Cliente : c0272
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [100] Cliente : c0009
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [101] Cliente : c0259
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [102] Cliente : c0154
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [103] Cliente : c0015
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [104] Cliente : c0015
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [105] Cliente : c0047
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [106] Cliente : c0170
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [107] Cliente : c0007
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [108] Cliente : c0148
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [109] Cliente : c0064
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [110] Cliente : c0229
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [111] Cliente : c0125
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [112] Cliente : c0125
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [113] Cliente : c0233
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [114] Cliente : c0274
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [115] Cliente : c0274
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [116] Cliente : c0175
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [117] Cliente : c0010
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [118] Cliente : c0010
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [119] Cliente : c0010
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [120] Cliente : c0254
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [121] Cliente : c0134
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [122] Cliente : c0225
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [123] Cliente : c0225
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [124] Cliente : c0297
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [125] Cliente : c0297
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [126] Cliente : c0164
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [127] Cliente : c0164
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 12/12 activo en 12 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [128] Cliente : c0137
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [129] Cliente : c0137
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [130] Cliente : c0118
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [131] Cliente : c0054
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [132] Cliente : c0080
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: hogar. Sugerir promoción en hogar.
+
+  [133] Cliente : c0080
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: hogar. Sugerir promoción en hogar.
+
+  [134] Cliente : c0095
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [135] Cliente : c0095
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [136] Cliente : c0283
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [137] Cliente : c0186
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: hogar. Sugerir promoción en hogar.
+
+  [138] Cliente : c0253
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [139] Cliente : c0021
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [140] Cliente : c0021
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [141] Cliente : c0029
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [142] Cliente : c0247
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [143] Cliente : c0060
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [144] Cliente : c0060
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [145] Cliente : c0123
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [146] Cliente : c0234
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [147] Cliente : c0234
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [148] Cliente : c0179
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [149] Cliente : c0179
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [150] Cliente : c0179
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [151] Cliente : c0179
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [152] Cliente : c0275
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [153] Cliente : c0076
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [154] Cliente : c0102
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [155] Cliente : c0102
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [156] Cliente : c0250
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [157] Cliente : c0055
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [158] Cliente : c0178
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 3/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [159] Cliente : c0105
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [160] Cliente : c0105
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [161] Cliente : c0033
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [162] Cliente : c0279
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [163] Cliente : c0113
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [164] Cliente : c0113
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [165] Cliente : c0113
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [166] Cliente : c0113
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [167] Cliente : c0197
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [168] Cliente : c0197
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [169] Cliente : c0119
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 9/9 activo en 9 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [170] Cliente : c0077
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [171] Cliente : c0077
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [172] Cliente : c0077
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: gasolina. Sugerir promoción en gasolina.
+
+  [173] Cliente : c0171
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [174] Cliente : c0171
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: ropa. Sugerir promoción en ropa.
+
+  [175] Cliente : c0257
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [176] Cliente : c0289
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: salud. Sugerir promoción en salud.
+
+  [177] Cliente : c0241
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: turismo. Sugerir promoción en turismo.
+
+  [178] Cliente : c0111
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 11/12 activo en 12 MSI. Categoría frecuente: entretenimiento. Sugerir promoción en entretenimiento.
+
+  [179] Cliente : c0288
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 8/9 activo en 9 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [180] Cliente : c0288
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [181] Cliente : c0288
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: supermercado. Sugerir promoción en supermercado.
+
+  [182] Cliente : c0107
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [183] Cliente : c0211
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [184] Cliente : c0211
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 3/3 activo en 3 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [185] Cliente : c0211
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: muebles. Sugerir promoción en muebles.
+
+  [186] Cliente : c0213
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 6/6 activo en 6 MSI. Categoría frecuente: restaurante. Sugerir promoción en restaurante.
+
+  [187] Cliente : c0245
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 3/3 activo en 3 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [188] Cliente : c0115
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [189] Cliente : c0115
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 5/6 activo en 6 MSI. Categoría frecuente: viajes. Sugerir promoción en viajes.
+
+  [190] Cliente : c0024
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 12/12 activo en 12 MSI. Categoría frecuente: electronico. Sugerir promoción en electronico.
+
+  [191] Cliente : c0072
+       Tipo    : Promoción por MSI próximo a liquidar
+       Motivo  : Pago 2/3 activo en 3 MSI. Categoría frecuente: educacion. Sugerir promoción en educacion.
+
+  [192] Cliente : c0068
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 90.0% de compras de contado (18/20 transacciones). Monto acumulado: $141,066.46 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [193] Cliente : c0120
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 93.8% de compras de contado (15/16 transacciones). Monto acumulado: $139,280.22 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [194] Cliente : c0036
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.2% de compras de contado (15/17 transacciones). Monto acumulado: $199,975.25 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [195] Cliente : c0008
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 83.3% de compras de contado (15/18 transacciones). Monto acumulado: $100,813.12 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [196] Cliente : c0081
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 83.3% de compras de contado (10/12 transacciones). Monto acumulado: $110,954.84 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [197] Cliente : c0285
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 77.3% de compras de contado (17/22 transacciones). Monto acumulado: $174,638.45 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [198] Cliente : c0050
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (22/22 transacciones). Monto acumulado: $93,713.82 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [199] Cliente : c0145
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 83.3% de compras de contado (10/12 transacciones). Monto acumulado: $128,106.06 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [200] Cliente : c0157
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 82.4% de compras de contado (14/17 transacciones). Monto acumulado: $173,713.21 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [201] Cliente : c0235
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (19/19 transacciones). Monto acumulado: $102,375.14 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [202] Cliente : c0067
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.9% de compras de contado (16/18 transacciones). Monto acumulado: $220,819.73 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [203] Cliente : c0228
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (14/14 transacciones). Monto acumulado: $110,993.64 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [204] Cliente : c0246
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 86.7% de compras de contado (13/15 transacciones). Monto acumulado: $143,013.03 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [205] Cliente : c0143
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 92.0% de compras de contado (23/25 transacciones). Monto acumulado: $98,640.77 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [206] Cliente : c0221
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 77.3% de compras de contado (17/22 transacciones). Monto acumulado: $150,575.28 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [207] Cliente : c0248
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.0% de compras de contado (19/20 transacciones). Monto acumulado: $98,298.82 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [208] Cliente : c0183
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (18/18 transacciones). Monto acumulado: $127,513.28 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [209] Cliente : c0181
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 90.0% de compras de contado (18/20 transacciones). Monto acumulado: $176,411.92 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [210] Cliente : c0217
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 91.7% de compras de contado (22/24 transacciones). Monto acumulado: $267,291.21 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [211] Cliente : c0098
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 71.4% de compras de contado (10/14 transacciones). Monto acumulado: $194,727.59 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [212] Cliente : c0255
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.2% de compras de contado (15/17 transacciones). Monto acumulado: $178,150.50 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [213] Cliente : c0237
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 90.9% de compras de contado (10/11 transacciones). Monto acumulado: $146,846.19 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [214] Cliente : c0251
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (17/17 transacciones). Monto acumulado: $163,209.54 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [215] Cliente : c0299
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 85.0% de compras de contado (17/20 transacciones). Monto acumulado: $227,317.84 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [216] Cliente : c0114
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 90.5% de compras de contado (19/21 transacciones). Monto acumulado: $253,560.79 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [217] Cliente : c0166
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 89.5% de compras de contado (17/19 transacciones). Monto acumulado: $125,612.14 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [218] Cliente : c0093
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.5% de compras de contado (21/22 transacciones). Monto acumulado: $242,963.86 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [219] Cliente : c0103
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 72.7% de compras de contado (16/22 transacciones). Monto acumulado: $95,604.42 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [220] Cliente : c0224
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 73.3% de compras de contado (11/15 transacciones). Monto acumulado: $162,642.31 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [221] Cliente : c0001
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.9% de compras de contado (16/18 transacciones). Monto acumulado: $162,069.40 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [222] Cliente : c0244
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 80.0% de compras de contado (16/20 transacciones). Monto acumulado: $118,503.50 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [223] Cliente : c0252
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 80.0% de compras de contado (12/15 transacciones). Monto acumulado: $134,982.67 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [224] Cliente : c0087
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 80.0% de compras de contado (16/20 transacciones). Monto acumulado: $190,435.55 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [225] Cliente : c0083
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 94.1% de compras de contado (16/17 transacciones). Monto acumulado: $98,292.65 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [226] Cliente : c0028
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (22/22 transacciones). Monto acumulado: $106,414.14 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [227] Cliente : c0291
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 93.3% de compras de contado (14/15 transacciones). Monto acumulado: $135,618.96 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [228] Cliente : c0232
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.2% de compras de contado (15/17 transacciones). Monto acumulado: $125,044.96 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [229] Cliente : c0058
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (13/13 transacciones). Monto acumulado: $92,771.53 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [230] Cliente : c0130
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.9% de compras de contado (16/18 transacciones). Monto acumulado: $135,106.44 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [231] Cliente : c0063
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 81.8% de compras de contado (18/22 transacciones). Monto acumulado: $191,609.20 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [232] Cliente : c0182
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 94.1% de compras de contado (16/17 transacciones). Monto acumulado: $153,419.20 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [233] Cliente : c0222
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.2% de compras de contado (15/17 transacciones). Monto acumulado: $150,080.91 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [234] Cliente : c0154
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 84.2% de compras de contado (16/19 transacciones). Monto acumulado: $228,712.47 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [235] Cliente : c0003
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 92.3% de compras de contado (12/13 transacciones). Monto acumulado: $137,411.81 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [236] Cliente : c0015
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 85.0% de compras de contado (17/20 transacciones). Monto acumulado: $233,959.40 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [237] Cliente : c0047
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.5% de compras de contado (21/22 transacciones). Monto acumulado: $267,075.83 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [238] Cliente : c0053
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 92.3% de compras de contado (24/26 transacciones). Monto acumulado: $219,513.79 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [239] Cliente : c0056
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 89.5% de compras de contado (17/19 transacciones). Monto acumulado: $102,155.70 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [240] Cliente : c0064
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 71.4% de compras de contado (15/21 transacciones). Monto acumulado: $221,163.46 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [241] Cliente : c0198
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (19/19 transacciones). Monto acumulado: $114,212.63 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [242] Cliente : c0167
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 86.7% de compras de contado (13/15 transacciones). Monto acumulado: $142,227.96 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [243] Cliente : c0229
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 76.9% de compras de contado (10/13 transacciones). Monto acumulado: $182,237.49 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [244] Cliente : c0233
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 89.3% de compras de contado (25/28 transacciones). Monto acumulado: $128,903.60 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [245] Cliente : c0274
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 77.8% de compras de contado (14/18 transacciones). Monto acumulado: $175,818.25 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [246] Cliente : c0062
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 94.4% de compras de contado (17/18 transacciones). Monto acumulado: $94,019.74 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [247] Cliente : c0236
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.9% de compras de contado (16/18 transacciones). Monto acumulado: $182,163.33 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [248] Cliente : c0010
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 77.8% de compras de contado (14/18 transacciones). Monto acumulado: $195,440.51 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [249] Cliente : c0293
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (18/18 transacciones). Monto acumulado: $223,800.44 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [250] Cliente : c0282
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.5% de compras de contado (21/22 transacciones). Monto acumulado: $173,042.55 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [251] Cliente : c0014
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.2% de compras de contado (20/21 transacciones). Monto acumulado: $190,612.44 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [252] Cliente : c0054
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 80.0% de compras de contado (12/15 transacciones). Monto acumulado: $135,427.24 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [253] Cliente : c0080
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.2% de compras de contado (15/17 transacciones). Monto acumulado: $132,604.44 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [254] Cliente : c0283
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.9% de compras de contado (16/18 transacciones). Monto acumulado: $211,074.83 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [255] Cliente : c0185
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 90.0% de compras de contado (9/10 transacciones). Monto acumulado: $114,322.72 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [256] Cliente : c0276
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 77.8% de compras de contado (7/9 transacciones). Monto acumulado: $130,533.30 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [257] Cliente : c0186
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 92.3% de compras de contado (12/13 transacciones). Monto acumulado: $109,322.03 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [258] Cliente : c0253
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 75.0% de compras de contado (15/20 transacciones). Monto acumulado: $112,736.23 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [259] Cliente : c0159
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 88.2% de compras de contado (15/17 transacciones). Monto acumulado: $194,999.59 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [260] Cliente : c0021
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 86.4% de compras de contado (19/22 transacciones). Monto acumulado: $230,690.07 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [261] Cliente : c0220
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 93.3% de compras de contado (14/15 transacciones). Monto acumulado: $155,249.54 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [262] Cliente : c0188
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 78.9% de compras de contado (15/19 transacciones). Monto acumulado: $137,663.09 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [263] Cliente : c0029
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 84.2% de compras de contado (16/19 transacciones). Monto acumulado: $128,376.46 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [264] Cliente : c0231
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 81.8% de compras de contado (9/11 transacciones). Monto acumulado: $121,588.61 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [265] Cliente : c0110
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (16/16 transacciones). Monto acumulado: $114,256.91 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [266] Cliente : c0234
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 85.0% de compras de contado (17/20 transacciones). Monto acumulado: $176,384.70 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [267] Cliente : c0055
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 87.5% de compras de contado (14/16 transacciones). Monto acumulado: $124,643.72 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [268] Cliente : c0178
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.2% de compras de contado (20/21 transacciones). Monto acumulado: $206,494.35 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [269] Cliente : c0117
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 91.3% de compras de contado (21/23 transacciones). Monto acumulado: $271,864.40 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [270] Cliente : c0033
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 92.9% de compras de contado (13/14 transacciones). Monto acumulado: $167,593.42 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [271] Cliente : c0279
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 75.0% de compras de contado (9/12 transacciones). Monto acumulado: $117,716.48 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [272] Cliente : c0147
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 92.3% de compras de contado (12/13 transacciones). Monto acumulado: $106,849.44 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [273] Cliente : c0284
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (19/19 transacciones). Monto acumulado: $94,704.91 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [274] Cliente : c0197
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 75.0% de compras de contado (9/12 transacciones). Monto acumulado: $135,398.53 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [275] Cliente : c0152
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 95.5% de compras de contado (21/22 transacciones). Monto acumulado: $97,133.04 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [276] Cliente : c0296
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (16/16 transacciones). Monto acumulado: $205,006.03 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [277] Cliente : c0265
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 85.7% de compras de contado (12/14 transacciones). Monto acumulado: $144,669.11 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [278] Cliente : c0257
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 80.0% de compras de contado (12/15 transacciones). Monto acumulado: $150,296.57 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [279] Cliente : c0241
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 89.5% de compras de contado (17/19 transacciones). Monto acumulado: $153,999.25 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+  [280] Cliente : c0115
+       Tipo    : Aumento de línea de crédito 10%
+       Motivo  : 76.9% de compras de contado (10/13 transacciones). Monto acumulado: $125,684.85 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 10%.
+
+  [281] Cliente : c0294
+       Tipo    : Aumento de línea de crédito 20%
+       Motivo  : 100.0% de compras de contado (15/15 transacciones). Monto acumulado: $186,166.26 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 20%.
+
+  [282] Cliente : c0024
+       Tipo    : Aumento de línea de crédito 15%
+       Motivo  : 85.7% de compras de contado (12/14 transacciones). Monto acumulado: $131,530.09 (promedio: $91,196.36). Supera el promedio → aumento sugerido del 15%.
+
+REGISTROS INVALIDOS
+  Total descartados: 0
+  Mostrando primeros 0 registros:
+
+
+CONCLUSION DEL ANALISIS
+  El dataset muestra mayor concentracion de compras en la categoria
+  'electronico', con el mes 01 como periodo de mayor actividad.
+  Se identificaron 282 recomendaciones en total:
+  191 promociones por MSI proximo a liquidarse y 91
+  aumentos de linea de credito para clientes de alto perfil de contado.
+  Limitacion principal: el analisis es estatico (snapshot); no detecta
+  cambios de comportamiento en el tiempo ni fraudes por patrones anomalos.
