@@ -51,10 +51,10 @@ catalog = {
         ("Detergente",  50, 150),
     ],
     "Juguetes": [
-        ("Rompecabezas",      150, 400),
-        ("Muñeca",            200, 600),
-        ("Carro de Juguete",  180, 500),
-        ("Bloques Didácticos",120, 350),
+        ("Rompecabezas",       150, 400),
+        ("Muñeca",             200, 600),
+        ("Carro de Juguete",   180, 500),
+        ("Bloques Didácticos", 120, 350),
     ],
     "Belleza": [
         ("Shampoo",      80,  200),
@@ -66,54 +66,65 @@ catalog = {
 }
 
 clientes = [
-    "Ana García",       "Carlos López",     "María Martínez",   "José Rodríguez",  "Laura Hernández",
-    "Miguel González",  "Sofía Pérez",      "David Torres",     "Isabel Ramírez",  "Fernando Flores",
-    "Valentina Cruz",   "Roberto Reyes",    "Alejandra Morales","Eduardo Jiménez", "Natalia Ruiz",
-    "Andrés Vargas",    "Camila Díaz",      "Ricardo Castillo", "Paola Mendoza",   "Jorge Romero",
-    "Daniela Herrera",  "Sergio Gutiérrez", "Gabriela Moreno",  "Arturo Navarro",  "Lucía Ramos",
-    "Pablo Álvarez",    "Mariana Medina",   "Héctor Soto",      "Carolina Castro", "Óscar Ríos",
-    "Renata Suárez",    "Ignacio Miranda",  "Verónica Aguilar", "Ramón Ortega",    "Adriana Molina",
-    "Alberto Varela",   "Silvia Fuentes",   "Enrique Guerrero", "Patricia Muñoz",  "Tomás Vega",
-    "Fernanda Luna",    "Marco Sánchez",    "Beatriz Rojas",    "Guillermo León",  "Ximena Paredes",
-    "Felipe Núñez",     "Mónica Ibáñez",    "Diego Cabrera",    "Sandra Peña",     "Luis Espinoza",
-    "Rebeca Campos",    "Julio Cortez",     "Elena Delgado",    "Víctor Salinas",  "Alicia Ponce",
-    "Sebastián Fuentes","Cecilia Trujillo", "Juan Cervantes",   "Rosa Ávila",      "Manuel Bravo",
+    "Ana García",        "Carlos López",      "María Martínez",    "José Rodríguez",   "Laura Hernández",
+    "Miguel González",   "Sofía Pérez",       "David Torres",      "Isabel Ramírez",   "Fernando Flores",
+    "Valentina Cruz",    "Roberto Reyes",     "Alejandra Morales", "Eduardo Jiménez",  "Natalia Ruiz",
+    "Andrés Vargas",     "Camila Díaz",       "Ricardo Castillo",  "Paola Mendoza",    "Jorge Romero",
+    "Daniela Herrera",   "Sergio Gutiérrez",  "Gabriela Moreno",   "Arturo Navarro",   "Lucía Ramos",
+    "Pablo Álvarez",     "Mariana Medina",    "Héctor Soto",       "Carolina Castro",  "Óscar Ríos",
+    "Renata Suárez",     "Ignacio Miranda",   "Verónica Aguilar",  "Ramón Ortega",     "Adriana Molina",
+    "Alberto Varela",    "Silvia Fuentes",    "Enrique Guerrero",  "Patricia Muñoz",   "Tomás Vega",
+    "Fernanda Luna",     "Marco Sánchez",     "Beatriz Rojas",     "Guillermo León",   "Ximena Paredes",
+    "Felipe Núñez",      "Mónica Ibáñez",     "Diego Cabrera",     "Sandra Peña",      "Luis Espinoza",
+    "Rebeca Campos",     "Julio Cortez",      "Elena Delgado",     "Víctor Salinas",   "Alicia Ponce",
+    "Sebastián Fuentes", "Cecilia Trujillo",  "Juan Cervantes",    "Rosa Ávila",       "Manuel Bravo",
 ]
 
-sucursales = {
-    "Ciudad de México": ["Sucursal Norte", "Sucursal Centro", "Sucursal Sur"],
-    "Guadalajara":      ["Sucursal Norte", "Sucursal Centro", "Sucursal Sur"],
-    "Monterrey":        ["Sucursal Norte", "Sucursal Centro", "Sucursal Sur"],
-    "Puebla":           ["Sucursal Norte", "Sucursal Centro"],
-    "Tijuana":          ["Sucursal Norte", "Sucursal Centro"],
-    "Mérida":           ["Sucursal Norte", "Sucursal Centro"],
-    "León":             ["Sucursal Norte", "Sucursal Centro"],
+# Cada clave es (ciudad, sucursal); el valor es lista de (vendedor, turno).
+# Cada vendedor pertenece a una sola sucursal y tiene un turno fijo.
+vendedores = {
+    ("Ciudad de México", "Sucursal Norte"):  [("Rosa Méndez",       "Matutino"),   ("Jorge Vargas",      "Vespertino")],
+    ("Ciudad de México", "Sucursal Centro"): [("Lorena Soto",        "Nocturno"),   ("Miguel Peña",       "Matutino")],
+    ("Ciudad de México", "Sucursal Sur"):    [("Diana Reyes",        "Vespertino"), ("Ernesto Campos",    "Nocturno")],
+    ("Guadalajara",      "Sucursal Norte"):  [("Patricia Lara",      "Matutino"),   ("Andrés Mora",       "Vespertino")],
+    ("Guadalajara",      "Sucursal Centro"): [("Claudia Vega",       "Nocturno"),   ("Felipe Ríos",       "Matutino")],
+    ("Guadalajara",      "Sucursal Sur"):    [("Estela Cruz",        "Vespertino"), ("Héctor Lima",       "Nocturno")],
+    ("Monterrey",        "Sucursal Norte"):  [("Norma Ibarra",       "Matutino"),   ("Samuel Torres",     "Vespertino")],
+    ("Monterrey",        "Sucursal Centro"): [("Graciela Núñez",     "Nocturno"),   ("Raúl Guerrero",     "Matutino")],
+    ("Monterrey",        "Sucursal Sur"):    [("Susana Palacios",    "Vespertino"), ("Marcos Aguilar",    "Nocturno")],
+    ("Puebla",           "Sucursal Norte"):  [("Irene Castillo",     "Matutino"),   ("Osvaldo Ramos",     "Vespertino")],
+    ("Puebla",           "Sucursal Centro"): [("Beatriz Flores",     "Nocturno"),   ("Rodrigo Salinas",   "Matutino")],
+    ("Tijuana",          "Sucursal Norte"):  [("Carmen Villanueva",  "Vespertino"), ("Iván Espinoza",     "Nocturno")],
+    ("Tijuana",          "Sucursal Centro"): [("Alejandro Medina",   "Matutino"),   ("Valeria Fuentes",   "Vespertino")],
+    ("Mérida",           "Sucursal Norte"):  [("Ramón Delgado",      "Nocturno"),   ("Cecilia Ortiz",     "Matutino")],
+    ("Mérida",           "Sucursal Centro"): [("Bruno Herrera",      "Vespertino"), ("Natalia Rojas",     "Nocturno")],
+    ("León",             "Sucursal Norte"):  [("Arturo Sandoval",    "Matutino"),   ("Perla Guzmán",      "Vespertino")],
+    ("León",             "Sucursal Centro"): [("Daniel Cervantes",   "Nocturno"),   ("Adriana Méndez",    "Matutino")],
 }
 
-metodos_pago = ["Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Transferencia"]
-
-cities    = list(sucursales.keys())
-categories = list(catalog.keys())
+metodos_pago   = ["Efectivo", "Tarjeta de Crédito", "Tarjeta de Débito", "Transferencia"]
+categories     = list(catalog.keys())
+location_keys  = list(vendedores.keys())
 
 with open("ventas.csv", "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f)
     writer.writerow([
         "id_venta", "fecha", "producto", "categoria",
         "precio", "cantidad", "cliente",
-        "ciudad", "sucursal", "metodo_pago",
+        "ciudad", "sucursal", "metodo_pago", "vendedor", "turno",
     ])
 
     for i in range(1, 5001):
-        fecha    = start_date + timedelta(days=random.randint(0, date_range))
+        fecha     = start_date + timedelta(days=random.randint(0, date_range))
         categoria = random.choice(categories)
         producto, precio_min, precio_max = random.choice(catalog[categoria])
-        precio   = round(random.uniform(precio_min, precio_max), 2)
-        cantidad = random.randint(1, 20)
-        cliente  = random.choice(clientes)
-        ciudad   = random.choice(cities)
-        sucursal = random.choice(sucursales[ciudad])
-        metodo   = random.choice(metodos_pago)
+        precio    = round(random.uniform(precio_min, precio_max), 2)
+        cantidad  = random.randint(1, 20)
+        cliente   = random.choice(clientes)
+        ciudad, sucursal = random.choice(location_keys)
+        vendedor, turno  = random.choice(vendedores[(ciudad, sucursal)])
+        metodo    = random.choice(metodos_pago)
         writer.writerow([i, fecha, producto, categoria, precio, cantidad,
-                         cliente, ciudad, sucursal, metodo])
+                         cliente, ciudad, sucursal, metodo, vendedor, turno])
 
 print("ventas.csv generado con 5000 registros.")
