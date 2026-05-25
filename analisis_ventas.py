@@ -13,7 +13,6 @@ def normalizar(texto):
     return "".join(c for c in texto if unicodedata.category(c) != "Mn")
 
 
-# ── 1. Lectura y normalización ────────────────────────────────────────────────
 df = pd.read_csv("ventas.csv", parse_dates=["fecha"])
 
 columnas_texto = [

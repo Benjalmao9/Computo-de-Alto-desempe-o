@@ -80,8 +80,6 @@ clientes = [
     "Sebastián Fuentes", "Cecilia Trujillo",  "Juan Cervantes",    "Rosa Ávila",       "Manuel Bravo",
 ]
 
-# Cada clave es (ciudad, sucursal); el valor es lista de (vendedor, turno).
-# Cada vendedor pertenece a una sola sucursal y tiene un turno fijo.
 vendedores = {
     ("Ciudad de México", "Sucursal Norte"):  [("Rosa Méndez",       "Matutino"),   ("Jorge Vargas",      "Vespertino")],
     ("Ciudad de México", "Sucursal Centro"): [("Lorena Soto",        "Nocturno"),   ("Miguel Peña",       "Matutino")],

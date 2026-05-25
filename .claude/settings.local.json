@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python arreglo_numpy.py)",
+      "Bash(python3 \"C:\\\\Users\\\\benja\\\\OneDrive\\\\Escritorio\\\\Computo de alto desemp\\\\arreglo_numpy.py\")",
+      "Bash(py \"C:\\\\Users\\\\benja\\\\OneDrive\\\\Escritorio\\\\Computo de alto desemp\\\\arreglo_numpy.py\")",
+      "Bash(py \"C:\\\\Users\\\\benja\\\\OneDrive\\\\Escritorio\\\\Computo de alto desemp\\\\practica3_ventas.py\")",
+      "Bash(py ejercicio1_tupla.py)",
+      "Bash(py ejercicio2_diccionario.py)",
+      "Bash(py ejercicio3_listas.py)",
+      "Bash(py ejercicio4_pares.py)",
+      "Bash(py ejercicio6_productos.py)",
+      "Bash(npm --version)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}
