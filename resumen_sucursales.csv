@@ -1,0 +1,18 @@
+ciudad,sucursal,transacciones,cantidad_total,ingreso_total
+monterrey,sucursal centro,292,3006,2724648.45
+ciudad de mexico,sucursal norte,297,3022,2440626.38
+leon,sucursal norte,294,3110,2420900.83
+monterrey,sucursal sur,323,3396,2362934.51
+guadalajara,sucursal sur,289,3028,2353353.86
+merida,sucursal centro,297,3230,2227202.98
+tijuana,sucursal centro,312,3133,2175659.55
+puebla,sucursal norte,300,3153,1904312.36
+guadalajara,sucursal norte,308,3328,1903360.01
+ciudad de mexico,sucursal sur,287,3121,1900944.57
+puebla,sucursal centro,282,2912,1840648.86
+ciudad de mexico,sucursal centro,278,2905,1823605.19
+leon,sucursal centro,310,3251,1727009.33
+monterrey,sucursal norte,264,2884,1580260.22
+merida,sucursal norte,293,3068,1569522.26
+tijuana,sucursal norte,313,3152,1473361.0
+guadalajara,sucursal centro,261,2769,1409541.72
