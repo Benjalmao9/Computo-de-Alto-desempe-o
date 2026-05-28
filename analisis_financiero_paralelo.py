@@ -3,6 +3,7 @@ import numpy as np
 import time, unicodedata, sys
 from multiprocessing import Pool
 from collections import Counter
+from text_to_num import alpha2digit
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -39,9 +40,12 @@ def cargar_datos(ruta):
 def limpiar_dataframe(df):
     n0, df = len(df), df.copy()
     # 2a
-    df["monto_compra"] = pd.to_numeric(
-        df["monto_compra"].astype(str).str.replace("$","",regex=False)
-                         .str.replace(",","",regex=False).str.strip(), errors="coerce")
+    raw = df["monto_compra"].astype(str).str.replace("$","",regex=False).str.replace(",","",regex=False).str.strip()
+    df["monto_compra"] = pd.to_numeric(raw, errors="coerce")
+    still_bad = df["monto_compra"].isna()
+    if still_bad.any():
+        df.loc[still_bad, "monto_compra"] = pd.to_numeric(
+            raw[still_bad].apply(lambda x: alpha2digit(x, lang="es")), errors="coerce")
     df = df.dropna(subset=["id_cliente","monto_compra"]).copy()
     # 2b
     for c in ["id_cliente","categoria_comercio","tipo_pago","estado_compra"]:
@@ -208,34 +212,6 @@ def formatear_recomendaciones(recs):
 formatear_invalidos = lambda n: (f"\nREGISTROS INVALIDOS\n  Total descartados: {n}\n"
                                   f"  (Eliminados: montos/fechas invalidos, id_cliente vacio, inconsistencias MSI/pagos.)")
 
-def conclusion(ra, rc, recs, n_inv, total):
-    pct    = n_inv/total*100 if total else 0
-    n_msi  = sum(1 for r in recs if "MSI" in r["tipo"])
-    n_cred = sum(1 for r in recs if "credito" in normalizar_unicode(r["tipo"].lower()))
-    cat,_  = rc["categoria_mas_transacciones"]; mes,_ = ra["mes_mayor_actividad"]
-    return (
-        f"\nCONCLUSION DEL ANALISIS\n"
-        f"  El dataset muestra mayor concentracion de compras en la categoria\n"
-        f"  '{cat}', con el mes {mes:02d} como periodo de mayor actividad.\n"
-        f"  Se identificaron {len(recs)} recomendaciones en total:\n"
-        f"  {n_msi} promociones por MSI proximo a liquidarse y {n_cred}\n"
-        f"  aumentos de linea de credito para clientes de alto perfil de contado.\n"
-        f"  La limpieza fue esencial: {pct:.1f}% de los registros ({n_inv})\n"
-        f"  presentaron errores en montos, fechas o inconsistencias de pago,\n"
-        f"  lo que habria distorsionado promedios y conteos sin correccion previa.\n"
-        f"  Limitacion principal: el analisis es estatico (snapshot); no detecta\n"
-        f"  cambios de comportamiento en el tiempo ni fraudes por patrones anomalos.\n\n"
-        f"  MODELO MAP-REDUCE APLICADO\n"
-        f"  Se dividio (particiono) el DataFrame limpio en 4 bloques de igual\n"
-        f"  tamaño usando np.array_split. Cada bloque fue procesado localmente\n"
-        f"  (map) por la funcion procesar_bloque en su propio proceso del SO,\n"
-        f"  calculando monto_total y num_transacciones por cliente dentro de ese\n"
-        f"  fragmento. Los 4 resultados parciales se concatenaron y re-agruparon\n"
-        f"  por id_cliente sumando los subtotales de todos los bloques (reduccion),\n"
-        f"  obteniendo exactamente los mismos resultados que la version secuencial\n"
-        f"  pero distribuyendo el computo entre 4 procesos paralelos."
-    )
-
 def guardar_resumen(ruta, bloques):
     with open(ruta, "w", encoding="utf-8") as f: f.write("\n".join(bloques) + "\n")
 
@@ -272,7 +248,7 @@ if __name__ == "__main__":
     ra, rc = analizar_actividad_df(df), analizar_categorias_pagos_df(df)
     recs   = recomendar_promocion_msi(df) + recomendar_aumento_credito(df)
     textos = [formatear_analisis(ra, rc), formatear_recomendaciones(recs),
-              formatear_invalidos(num_inv), conclusion(ra, rc, recs, num_inv, total_raw)]
+              formatear_invalidos(num_inv)]
 
     for t in textos: print(t)
     guardar_resumen(RUTA_RESUMEN, textos)

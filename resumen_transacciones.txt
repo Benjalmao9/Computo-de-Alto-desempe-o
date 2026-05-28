@@ -1,50 +1,27 @@
 ANALISIS DE TRANSACCIONES FINANCIERAS
 
 ACTIVIDAD DE COMPRA
-  Total de transacciones validas : 4582
+  Total de transacciones validas : 5000
   Numero de clientes unicos      : 300
-  Monto total procesado          : $25,139,906.70
+  Monto total procesado          : $27,358,906.70
   Cliente con mas transacciones  : c0272 (29 compras)
-  Cliente con mayor monto acum.  : c0047 ($267,075.83)
-  Ticket promedio general        : $5,486.67
-  Mes con mayor actividad        : 01 (417 transacciones)
+  Cliente con mayor monto acum.  : c0117 ($271,864.40)
+  Ticket promedio general        : $5,471.78
+  Mes con mayor actividad        : 01 (457 transacciones)
 
 CATEGORIAS Y PAGOS
-  Categoria con mas transacciones: electronico (477)
-  Categoria con mayor monto      : electronico ($6,635,260.80)
-  Total compras MSI              : 484
+  Categoria con mas transacciones: electronico (516)
+  Categoria con mayor monto      : electronico ($6,785,760.80)
+  Total compras MSI              : 531
   Plazo MSI mas utilizado        : 6 meses
-  Monto promedio en MSI          : $8,953.44
+  Monto promedio en MSI          : $8,608.22
 
 RECOMENDACIONES
-  Promoción por MSI próximo a liquidar        : 175 cliente(s)
-  Aumento de línea de crédito 15%             : 38 cliente(s)
-  Aumento de línea de crédito 20%             : 36 cliente(s)
-  Aumento de línea de crédito 10%             : 19 cliente(s)
+  Promoción por MSI próximo a liquidar        : 191 cliente(s)
+  Aumento de línea de crédito 15%             : 37 cliente(s)
+  Aumento de línea de crédito 20%             : 39 cliente(s)
+  Aumento de línea de crédito 10%             : 15 cliente(s)
 
 REGISTROS INVALIDOS
-  Total descartados: 418
-  (Eliminados durante limpieza pandas: montos/fechas invalidos,
-   id_cliente vacio, inconsistencias en pagos o en MSI.)
-
-CONCLUSION DEL ANALISIS
-  El dataset muestra mayor concentracion de compras en la categoria
-  'electronico', con el mes 01 como periodo de mayor actividad.
-  Se identificaron 268 recomendaciones en total:
-  175 promociones por MSI proximo a liquidarse y 93
-  aumentos de linea de credito para clientes de alto perfil de contado.
-  La limpieza fue esencial: 8.4% de los registros (418)
-  presentaron errores en montos, fechas o inconsistencias de pago,
-  lo que habria distorsionado promedios y conteos sin correccion previa.
-  Limitacion principal: el analisis es estatico (snapshot); no detecta
-  cambios de comportamiento en el tiempo ni fraudes por patrones anomalos.
-
-  MODELO MAP-REDUCE APLICADO
-  Se dividio (particiono) el DataFrame limpio en 4 bloques de igual
-  tamaño usando np.array_split. Cada bloque fue procesado localmente
-  (map) por la funcion procesar_bloque en su propio proceso del SO,
-  calculando monto_total y num_transacciones por cliente dentro de ese
-  fragmento. Los 4 resultados parciales se concatenaron y re-agruparon
-  por id_cliente sumando los subtotales de todos los bloques (reduccion),
-  obteniendo exactamente los mismos resultados que la version secuencial
-  pero distribuyendo el computo entre 4 procesos paralelos.
+  Total descartados: 0
+  (Eliminados: montos/fechas invalidos, id_cliente vacio, inconsistencias MSI/pagos.)
